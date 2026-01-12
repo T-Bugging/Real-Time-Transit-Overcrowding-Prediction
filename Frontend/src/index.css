@@ -1,0 +1,48 @@
+/* Import Inter from Google Fonts for consistent UI typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg:#0b0b12; /* near-black */
+  --panel:#14121a; /* dark panel */
+  --accent:#ff7a00; /* orange accent */
+  --muted:#bfb8ff;
+  --text:#eae6ff;
+}
+
+body { margin: 0; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: var(--bg); color: var(--text); }
+.app-header { background: linear-gradient(90deg,var(--panel), #1a1530); padding: 18px 28px; color: var(--text); display:flex; align-items:center; justify-content:space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.6) }
+.app-header .brand { display:flex; gap:12px; align-items:center }
+.logo { width:56px; height:56px; border-radius:28px; background:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:700; color:white }
+.nav { display:flex; gap:18px; align-items:center }
+.nav a { color:var(--muted); text-decoration:none; transition: all 0.2s ease; padding: 8px 12px; border-radius: 6px; cursor: pointer; }
+.nav a:hover { color:var(--text); background: rgba(26, 26, 26, 0.12) }
+.nav a.active { color: var(--text); background: rgba(26, 26, 26, 0.22); border: 1px solid rgba(26, 26, 26, 0.32); }
+
+.dashboard { display:flex; gap:12px; padding:18px }
+.sidebar { width: 380px; padding: 18px; background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent); border-radius: 12px; height: calc(100vh - 120px); overflow:auto }
+.map-area { flex: 1; display:flex; flex-direction:column; gap:12px }
+
+.vehicle-card { padding:12px; border-radius:10px; background: rgba(255,255,255,0.02); margin-bottom:10px; border: 1px solid rgba(255,107,53,0.2); border-left: 4px solid var(--accent) }
+.vehicle-card h4 { margin:0 0 6px 0; color:var(--text) }
+.vehicle-meta { font-size:13px; color:var(--muted) }
+
+.map-container-small { height: 48vh; border-radius:12px; overflow:hidden; }
+
+ul { list-style: none; padding: 0; margin:0 }
+
+button.primary { background:var(--accent); color:white; border:0; padding:8px 12px; border-radius:8px; cursor:pointer }
+
+/* ensure app root fills */
+#root, .app { 
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column;
+  width: 100%;
+}
+
+main { 
+  flex: 1; 
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}

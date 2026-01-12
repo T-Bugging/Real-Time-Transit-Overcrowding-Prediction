@@ -1,0 +1,230 @@
+.dashboard-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.dashboard-header {
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(26, 26, 26, 0.3) 50%, rgba(26, 26, 26, 0.1) 100%);
+  border-bottom: 1px solid rgba(255, 107, 53, 0.3);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.dashboard-header h1 {
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.dashboard-header .subtitle {
+  color: var(--accent);
+  margin: 0;
+  font-size: 14px;
+}
+
+.map-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+  width: 100%;
+  background: #000;
+}
+
+.map-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-map {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  background: #1a1a1a;
+}
+
+.loading-spinner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 16px;
+  z-index: 5;
+}
+
+.routes-legend {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: var(--panel);
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+.routes-legend h3 {
+  color: var(--text);
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  background: rgba(26, 26, 26, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(26, 26, 26, 0.12);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+  background: rgba(26, 26, 26, 0.12);
+  border-color: rgba(26, 26, 26, 0.22);
+  transform: translateX(4px);
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.legend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.legend-info strong {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.route-name {
+  color: var(--text);
+  font-size: 12px;
+  display: block;
+  line-height: 1.3;
+}
+
+.route-hours {
+  color: var(--muted);
+  font-size: 11px;
+  display: block;
+  line-height: 1.2;
+}
+
+.route-tooltip {
+  color: #111 !important;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.route-tooltip strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* Leaflet customization */
+.leaflet-control-attribution {
+  background: rgba(0, 0, 0, 0.6) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.leaflet-control-zoom {
+  border: 1px solid rgba(26, 26, 26, 0.3) !important;
+  background: var(--panel) !important;
+  z-index: 500;
+}
+
+.leaflet-control-zoom a {
+  background-color: var(--panel) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: rgba(26, 26, 26, 0.08) !important;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 16px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .routes-legend {
+    max-width: 280px;
+    max-height: 300px;
+    bottom: 10px;
+    left: 10px;
+    padding: 12px;
+  }
+
+  .routes-legend h3 {
+    font-size: 14px;
+  }
+
+  .legend-item {
+    padding: 8px;
+  }
+}
+
+/* Generic elevated panel used across dashboard/admin */
+.panel-card {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid rgba(26,26,26,0.5);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.panel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.7);
+  border-color: rgba(255,135,60,0.18);
+}
+
+/* Slight tweak specifically for admin route cards */
+.admin-route-card {
+  border-radius: 12px;
+}

@@ -1,0 +1,323 @@
+.ticket-booking-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--bg) 0%, #1a1a2e 100%);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.booking-form-section {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.booking-form-section h1 {
+  color: var(--text);
+  margin: 0 0 24px 0;
+  font-size: 28px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group select,
+.form-group input {
+  padding: 12px 16px;
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  border-radius: 8px;
+  background: rgba(20, 18, 26, 0.95);
+  color: #eae6ff;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bfb8ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background: #14121a;
+  color: #eae6ff;
+  padding: 8px;
+  margin: 4px 0;
+}
+
+.form-group select option:hover {
+  background: rgba(124, 77, 255, 0.3);
+  color: #eae6ff;
+}
+
+.form-group select option:checked {
+  background: linear-gradient(rgba(124, 77, 255, 0.5), rgba(124, 77, 255, 0.5));
+  color: #eae6ff;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background-color: rgba(20, 18, 26, 0.95);
+  box-shadow: 0 0 0 3px rgba(124, 77, 255, 0.1);
+}
+
+.form-group select:disabled,
+.form-group input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.route-info {
+  background: rgba(26, 26, 26, 0.2);
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 8px 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.info-row .label {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.info-row .value {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn-book {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, #0a0a0a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.btn-book:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 26, 26, 0.6);
+}
+
+.btn-book:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4f;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ff7875;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.booking-confirmation {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(73, 217, 145, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.confirmation-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.confirmation-header h2 {
+  color: #49d991;
+  font-size: 24px;
+  margin: 0;
+}
+
+.ticket-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(124, 77, 255, 0.1);
+}
+
+.detail-label {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ticket-id {
+  font-family: 'Courier New', monospace;
+  font-size: 16px !important;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(124, 77, 255, 0.2);
+  margin: 8px 0;
+}
+
+.prediction-result {
+  background: rgba(26, 26, 26, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+.prediction-result h3 {
+  margin: 0 0 12px 0;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.occupancy-display {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.occupancy-percentage {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.occupancy-status {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-high {
+  background: rgba(255, 77, 77, 0.2);
+  color: #ff7875;
+}
+
+.status-medium {
+  background: rgba(255, 217, 61, 0.2);
+  color: #ffc53d;
+}
+
+.status-low {
+  background: rgba(73, 217, 145, 0.2);
+  color: #49d991;
+}
+
+.occupancy-message {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.btn-new-ticket {
+  width: 100%;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, #0a0a0a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+}
+
+.btn-new-ticket:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 26, 26, 0.6);
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .booking-form-section,
+  .booking-confirmation {
+    padding: 20px;
+  }
+
+  .occupancy-percentage {
+    font-size: 36px;
+  }
+}

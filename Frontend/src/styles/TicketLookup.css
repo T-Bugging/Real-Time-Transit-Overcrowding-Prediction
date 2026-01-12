@@ -1,0 +1,283 @@
+.ticket-lookup-page {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, var(--bg) 0%, #1a1a2e 100%);
+}
+
+.lookup-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.lookup-section {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-bottom: 24px;
+}
+
+.lookup-section h1 {
+  color: var(--text);
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 24px 0;
+  font-size: 14px;
+}
+
+.lookup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-input-group {
+  display: flex;
+  gap: 12px;
+}
+
+.search-input-group input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  border-radius: 8px;
+  background: rgba(26, 26, 26, 0.1);
+  color: var(--text);
+  font-size: 14px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.search-input-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(26, 26, 26, 0.15);
+  box-shadow: 0 0 0 3px rgba(26, 26, 26, 0.1);
+}
+
+.search-input-group input::placeholder {
+  color: var(--muted);
+}
+
+.btn-search {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--accent) 0%, #0a0a0a 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-search:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 26, 26, 0.6);
+}
+
+.btn-search:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4f;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ff7875;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lookup-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ticket-info-card,
+.prediction-card {
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(26, 26, 26, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.ticket-info-card h2,
+.prediction-card h2 {
+  color: var(--text);
+  margin: 0 0 16px 0;
+  font-size: 18px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: rgba(26, 26, 26, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(26, 26, 26, 0.3);
+}
+
+.info-label {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.prediction-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.occupancy-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(26, 26, 26, 0.2);
+  border-radius: 12px;
+}
+
+.occupancy-percentage-large {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.occupancy-level {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.level-high {
+  background: rgba(255, 77, 77, 0.2);
+  color: #ff7875;
+}
+
+.level-medium {
+  background: rgba(255, 217, 61, 0.2);
+  color: #ffc53d;
+}
+
+.level-low {
+  background: rgba(73, 217, 145, 0.2);
+  color: #49d991;
+}
+
+.prediction-message {
+  background: rgba(26, 26, 26, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 16px;
+}
+
+.prediction-message p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.prediction-message strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.route-details {
+  margin-top: auto;
+}
+
+.route-details h3 {
+  color: var(--text);
+  margin: 0 0 12px 0;
+  font-size: 16px;
+}
+
+.route-detail-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.3);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.route-detail-item:last-child {
+  border-bottom: none;
+}
+
+.route-detail-item .value {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--muted);
+}
+
+@media (max-width: 768px) {
+  .lookup-results {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .occupancy-percentage-large {
+    font-size: 48px;
+  }
+
+  .ticket-info-card,
+  .prediction-card {
+    padding: 16px;
+  }
+}
