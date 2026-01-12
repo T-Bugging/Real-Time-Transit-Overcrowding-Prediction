@@ -104,15 +104,9 @@ npm run dev
 # open http://localhost:5174
 ```
 
-Customisation / Troubleshooting
--------------------------------
-- Accent color: edit `--accent` in `Frontend/src/index.css` (currently set to black `#1a1a1a` or previously orange `#ff7a00`).
-- If map is blank: ensure backend is running and `FrontEnd/index.html` includes Leaflet CSS and JS. Also confirm `vite` proxy is working.
-- If imports fail when running backend from `Backend` folder, ensure `app.py` uses relative imports (the repo uses direct module imports within the `Backend` package).
 
 Notes
 -----
 - This is a development setup (Flask dev server). For production, use a WSGI server and build the frontend for static hosting.
 - The ticket generator writes `tickets.json` in repository root.
 
-If you want me to restore the orange accent (`#ff7a00`) or adjust the dashboard layout so the map is a right-hand pane with bus info on the left, tell me and I will apply the CSS + component changes now.
