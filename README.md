@@ -5,6 +5,8 @@ Overview
 --------
 A full-stack app that predicts bus overcrowding in real time using a LightGBM model and visualizes routes on a Leaflet map. Features ticket booking, ticket lookup with predictions, and a routes dashboard.
 
+DEMO - https://youtu.be/DIESkQS3FUY
+
 Repository layout
 -----------------
 - main.py
